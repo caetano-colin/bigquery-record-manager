@@ -123,7 +123,13 @@ In addition, you may also want to adjust `snapshot_retention_period` which is gi
 
 The param file is available [here](https://github.com/GoogleCloudPlatform/bigquery-record-manager/blob/main/param.json). 
 
-Once you have created the file, upload it to your GCS bucket. Copy the full path to this file, as you will need it in the next step. 
+Create a bucket using:
+
+```bash
+gcloud storage buckets create gs://<your_bucket_name>
+```
+
+Once you have created the file, upload it to your GCS bucket using `gsutil cp param.json gs://<your_bucket_name>`. Copy the full path to this file, as you will need it in the next step.
 
 As mentioned previously, you run Record Manager in either `validate` or `apply` mode. 
 
